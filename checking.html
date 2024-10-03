@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icon.png">
+    <title>ProViewer - Your paid content viewer</title>
+    <style>
+        :root {
+            --background-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --accent-color: #0071e3;
+            --card-background: #ffffff;
+            --border-color: #d2d2d7;
+            --hover-color: #0077ed;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.003em;
+            margin-bottom: 0.5rem;
+        }
+
+        .site-description {
+            font-size: 21px;
+            font-weight: 400;
+            letter-spacing: 0.011em;
+            margin-bottom: 2rem;
+        }
+
+        .button {
+            padding: 0.8rem 2rem;
+            font-size: 17px;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 980px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: var(--hover-color);
+        }
+
+        .button i {
+            margin-right: 10px; /* 将间距从8px增加到12px */
+        }
+
+        .robot-check {
+            background-color: var(--card-background);
+            border-radius: 18px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            text-align: center;
+        }
+
+        .robot-check h2 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.003em;
+            margin-bottom: 1.5rem;
+        }
+
+        .robot-check p {
+            font-size: 17px;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 12px;
+            color: #86868b;
+        }
+
+        footer a {
+            color: #515154;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 734px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .site-description {
+                font-size: 19px;
+            }
+
+            .robot-check h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+
+    <!-- 添加Font Awesome库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ProViewer</h1>
+            <p class="site-description">The only tool you need to watch and download Locked content</p>
+        </header>
+
+        <section class="robot-check">
+            <h2>Bot Detection</h2>
+            <p>To ensure the long-term sustainability of our service and protect our resources, please complete this quick verification. It helps us detect and block malicious bots, saving costs and improving our ability to serve you better:</p>
+            <button id="verify-button" class="button">
+                <i class="fas fa-robot"></i>Click to Verify
+            </button>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 ProViewer - All rights reserved. Our content is updated daily.</p>
+        <div>
+            <a href="about-us.html">About Us</a>
+            <a href="contact-us.html">Contact Us / DMCA</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('verify-button').addEventListener('click', function() {
+            window.location.href = 'https://example.com/main-page';
+        });
+    </script>
+
+</body></html>
