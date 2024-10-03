@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineCube - User Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --background-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --accent-color: #0071e3;
+            --card-background: #ffffff;
+            --border-color: #d2d2d7;
+            --hover-color: #0077ed;
+            --name-color: #ffd700;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.003em;
+            margin-bottom: 0.5rem;
+        }
+
+        .user-profile {
+            background-color: var(--card-background);
+            border-radius: 18px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .user-profile::before {
+            content: "unlock.com";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 4rem;
+            color: rgba(0, 0, 0, 0.05);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .user-profile h2 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.003em;
+            margin-bottom: 1.5rem;
+        }
+
+        .user-avatar {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+        }
+
+        .user-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat {
+            font-size: 17px;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            font-size: 24px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .button {
+            padding: 0.8rem 2rem;
+            font-size: 17px;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 980px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: var(--hover-color);
+        }
+
+        .button i {
+            margin-right: 0.5rem;
+        }
+
+        .button .user-name {
+            color: var(--name-color);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 12px;
+            color: #86868b;
+        }
+
+        footer a {
+            color: #515154;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 734px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .user-profile h2 {
+                font-size: 24px;
+            }
+
+            .user-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .user-profile::before {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CineCube</h1>
+        </header>
+
+        <section class="user-profile">
+            <h2>John Doe</h2>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' font-size='32' text-anchor='middle' dy='.3em' fill='%23555'>User Avatar</text>%3C/svg%3E" alt="User Avatar" class="user-avatar">
+            <div class="user-stats">
+                <div class="stat">
+                    <span class="stat-value">42</span>
+                    Videos
+                </div>
+                <div class="stat">
+                    <span class="stat-value">128</span>
+                    Photos
+                </div>
+            </div>
+            <button class="button"><i class="fas fa-lock"></i> View Profile of <span class="user-name">John Doe</span></button>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 CineCube - All rights reserved. Our content is updated daily.</p>
+        <div>
+            <a href="about-us.html">About Us</a>
+            <a href="contact-us.html">Contact Us / DMCA</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.button').addEventListener('click', function() {
+            window.location.href = 'checking.html';
+        });
+    </script>
+
+
+</body></html>

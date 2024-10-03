@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProViewer - Paid content viewer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --background-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --accent-color: #0071e3;
+            --card-background: #ffffff;
+            --border-color: #d2d2d7;
+            --hover-color: #0077ed;
+            --name-color: #ffd700;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.003em;
+            margin-bottom: 0.5rem;
+        }
+
+        .user-profile {
+            background-color: var(--card-background);
+            border-radius: 18px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .user-profile::before {
+            content: "proviewer.pro";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 4rem;
+            color: rgba(0, 0, 0, 0.05);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .user-profile h2 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.003em;
+            margin-bottom: 1.5rem;
+        }
+
+        .user-avatar {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+        }
+
+        .user-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat {
+            font-size: 17px;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            font-size: 24px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .button {
+            padding: 0.8rem 2rem;
+            font-size: 17px;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 980px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: var(--hover-color);
+        }
+
+        .button i {
+            margin-right: 0.5rem;
+        }
+
+        .button .user-name {
+            color: var(--name-color);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 12px;
+            color: #86868b;
+        }
+
+        footer a {
+            color: #515154;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .latest-profiles-title {
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        @media (max-width: 734px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .user-profile h2 {
+                font-size: 24px;
+            }
+
+            .user-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .user-profile::before {
+                font-size: 3rem;
+            }
+
+            .latest-profiles-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ProViewer</h1>
+        </header>
+
+        <section class="user-profile">
+            <h2>Sweetie Fox (@sweetiefox_of)</h2>
+            <img src="./images/sweetiefox_of-pro.jpg" alt="User Avatar" class="user-avatar">
+            <div class="user-stats">
+                <div class="stat">
+                    <span class="stat-value">311</span>
+                    Videos
+                </div>
+                <div class="stat">
+                    <span class="stat-value">5410</span>
+                    Photos
+                </div>
+            </div>
+            <button class="button"><i class="fas fa-lock"></i> View Profile of <span class="user-name">@sweetiefox_of</span></button>
+        </section>
+
+        <h2 class="latest-profiles-title">Latest Unlocked Profiles</h2>
+        <div id="additional-profiles"></div>
+    </div>
+
+    <footer>
+        <p>© 2024 ProViewer - All rights reserved. Our content is updated daily.</p>
+        <div>
+            <a href="about-us.html">About Us</a>
+            <a href="contact-us.html">Contact Us / DMCA</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.button').addEventListener('click', function() {
+            window.location.href = 'checking.html';
+        });
+
+        const users = [
+            { name: "@daintywilder", videos: 699, photos: 4234, image: "./images/more/1daintywilder-pro.jpg"},
+            { name: "@megnut", videos: 173, photos: 764, image: "./images/more/2megnut-pro.jpg" },
+            { name: "@violetmyers", videos: 422, photos: 1967, image: "./images/more/3violetmyers-pro.jpg" },
+            { name: "@skylarmaexo", videos: 483, photos: 3364, image: "./images/more/4skylarmaexo-pro.jpg" },
+            { name: "@breeboo", videos: 156, photos: 4972, image: "./images/more/5breeboo-pro.jpg" },
+            { name: "@laceylaid", videos: 79, photos: 1561, image: "./images/more/6laceylaid-pro.jpg" },
+            { name: "@autumren", videos: 141, photos: 1583, image: "./images/more/7autumren-pro.jpg" },
+            { name: "@callmeslooo", videos: 41, photos: 147, image: "./images/more/8callmeslooo-pro.jpg" },
+            { name: "@itsnatalieroush", videos: 86, photos: 1645, image: "./images/more/9itsnatalieroush-pro.jpg" },
+            { name: "@jasminx", videos: 624, photos: 2098, image: "./images/more/10jasminx-pro.jpg" },
+            { name: "@hopelesssofrantic", videos: 286, photos: 3357, image: "./images/more/11hopelesssofrantic-pro.jpg"},
+            { name: "@jordantaylor_night", videos: 100, photos: 140, image: "./images/more/12jordantaylor_night-pro.jpg" },
+            { name: "@locorory", videos: 63, photos: 2258, image: "./images/more/13locorory-pro.jpg" },
+            { name: "@toycrazykatie", videos: 1319, photos: 13423, image: "./images/more/14toycrazykatie-pro.jpg" },
+            { name: "@corinnakopf", videos: 33, photos: 499, image: "./images/more/15corinnakopf-pro.jpg" },
+            { name: "@sofiasilk", videos: 1823, photos: 8672, image: "./images/more/16sofiasilk-pro.jpg" },
+            { name: "@lilianafenty", videos: 380, photos: 6946, image: "./images/more/17lilianafenty-pro.jpg" },
+            { name: "@lilveronicar", videos: 264, photos: 1725, image: "./images/more/18lilveronicar-pro.jpg" },
+            { name: "@minaash", videos: 41, photos: 715, image: "./images/more/19minaash-pro.jpg" },
+            { name: "@hellomeimei", videos: 89, photos: 1164, image: "./images/more/20hellomeimei.jpg" },
+            { name: "@KittyxKum", videos: 1632, photos: 46707, image: "./images/more/21KittyxKum-pro.jpg" },
+            { name: "@briannabell", videos: 409, photos: 7312, image: "./images/more/22briannabell-pro.jpg" }
+        ];
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function createUserProfile(user) {
+    return `
+        <section class="user-profile">
+            <h2>${user.name}</h2>
+            <img src="${user.image}" alt="${user.name}" class="user-avatar">
+            <div class="user-stats">
+                <div class="stat">
+                    <span class="stat-value">${user.videos}</span>
+                    Videos
+                </div>
+                <div class="stat">
+                    <span class="stat-value">${user.photos}</span>
+                    Photos
+                </div>
+            </div>
+            <button class="button"><i class="fas fa-lock"></i> View Profile of <span class="user-name">${user.name}</span></button>
+        </section>
+    `;
+}
+
+        function updateAdditionalProfiles() {
+            const container = document.getElementById('additional-profiles');
+            shuffleArray(users);
+            const selectedUsers = users.slice(0, 3);
+            container.innerHTML = selectedUsers.map(createUserProfile).join('');
+
+            container.querySelectorAll('.button').forEach(button => {
+                button.addEventListener('click', function() {
+                    window.location.href = 'checking.html';
+                });
+            });
+        }
+
+        window.addEventListener('load', updateAdditionalProfiles);
+    </script>
+
+
+</body></html>

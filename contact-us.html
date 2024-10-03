@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProViewer - Contact Us</title>
+    <style>
+        :root {
+            --background-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --accent-color: #0071e3;
+            --card-background: #ffffff;
+            --border-color: #d2d2d7;
+            --hover-color: #0077ed;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.003em;
+            margin-bottom: 0.5rem;
+        }
+
+        .site-description {
+            font-size: 21px;
+            font-weight: 400;
+            letter-spacing: 0.011em;
+            margin-bottom: 2rem;
+        }
+
+        .contact-section {
+            background-color: var(--card-background);
+            border-radius: 18px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .contact-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.003em;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-section p {
+            font-size: 17px;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+        }
+
+        input,
+        textarea {
+            padding: 0.5rem;
+            font-size: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            padding: 0.8rem 2rem;
+            font-size: 17px;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 980px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--hover-color);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            font-size: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 12px;
+            color: #86868b;
+        }
+
+        footer a {
+            color: #515154;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 734px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .site-description {
+                font-size: 19px;
+            }
+
+            .contact-section h2 {
+                font-size: 24px;
+            }
+        }
+
+        .title-link:hover {
+            text-decoration: underline;
+        }
+
+        header h1 a.title-link:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;" class="title-link">ProViewer</a></h1>
+            <p class="site-description">The only tool you need to watch and download Locked content</p>
+        </header>
+
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Whether you have a question about our services, or just want to share your
+                thoughts, please don't hesitate to reach out.We will reply you as soon as we can.</p>
+            <p> You can use this address to send DMCA removal requests too. We will remove them as soon as possible.</p>
+            <p>Thank you.</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required="">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required="">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required="">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required=""></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <div class="contact-info">
+                <h3>Other Ways to Reach Us</h3>
+                <p><i class="fas fa-envelope"></i> Email: support@proviewer.pro</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 ProViewer - All rights reserved. Our content is updated daily.</p>
+        <div>
+            <a href="index.html">Home Page</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact-us.html">Contact Us / DMCA</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+        });
+    </script>
+
+
+</body>
+
+</html>
