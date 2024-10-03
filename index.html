@@ -120,9 +120,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             text-decoration: none;
-            /* 添加这行 */
             color: inherit;
-            /* 添加这行 */
         }
 
         .movie-item:hover {
@@ -281,43 +279,6 @@
                 margin-right: 0;
                 margin-bottom: 10px;
             }
-        }
-
-        /* Robot Check Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
         }
 
         .comment-actions {
@@ -480,46 +441,12 @@
         </div>
     </footer>
 
-    <!-- Robot Check Modal -->
-    <div id="robotCheckModal" class="modal">
-        <div class="modal-content">
-            <span class="close">×</span>
-            <h2>Robot Verification</h2>
-            <p>To ensure you're not a robot, please complete the following verification:</p>
-            <p>1. Please click on all images containing cars.</p>
-            <p>2. Please enter the numeric verification code you see.</p>
-            <p>3. Please solve a simple math problem.</p>
-            <button id="verifyButton" class="button">Verify</button>
-        </div>
-    </div>
-
     <script>
-        var modal = document.getElementById("robotCheckModal");
-        var closeBtn = document.getElementsByClassName("close")[0];
-        var verifyBtn = document.getElementById("verifyButton");
-
         document.getElementById('search-form').addEventListener('submit', function (e) {
             e.preventDefault();
             var searchTerm = document.getElementById('search-input').value;
-            modal.style.display = "block";
+            window.location.href = 'confirm-search.html?search=' + encodeURIComponent(searchTerm);
         });
-
-        closeBtn.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        verifyBtn.onclick = function () {
-            alert("Verification passed!");
-            modal.style.display = "none";
-            var searchTerm = document.getElementById('search-input').value;
-            alert('You are exploring the movie: ' + searchTerm);
-        }
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
 
         document.getElementById('submit-comment').addEventListener('click', function () {
             var comment = document.getElementById('add-comment').value;
@@ -531,18 +458,9 @@
             }
         });
 
-        document.getElementById('search-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            var searchTerm = document.getElementById('search-input').value;
-
-            window.location.href = 'confirm-search.html?search=' + encodeURIComponent(searchTerm);
-        });
-
-
         document.querySelectorAll('.like-btn, .dislike-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 this.classList.toggle('active');
-
 
                 if (this.classList.contains('like-btn')) {
                     this.nextElementSibling.classList.remove('active');
